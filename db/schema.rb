@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180705215053) do
+ActiveRecord::Schema.define(version: 20180706104020) do
 
   create_table "exercise_categories", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20180705215053) do
     t.integer "exercise_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_file_name"
+    t.string "photo_content_type"
+    t.integer "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string "movie_file_name"
+    t.string "movie_content_type"
+    t.integer "movie_file_size"
+    t.datetime "movie_updated_at"
   end
 
   create_table "food_categories", force: :cascade do |t|
@@ -35,8 +43,8 @@ ActiveRecord::Schema.define(version: 20180705215053) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.integer "calories"
-    t.integer "fat"
+    t.float "calories"
+    t.integer "fat  "
     t.integer "protein"
     t.integer "carbs"
     t.integer "fiber"

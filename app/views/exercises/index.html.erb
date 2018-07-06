@@ -16,6 +16,7 @@
   <tbody>
     <% @exercises.each do |exercise| %>
       <tr>
+        <td><%= image_tag exercise.photo, style:"width:25%"%></td>
         <td><%= exercise.name %></td>
         <td><%= exercise.description %></td>
         <td><%= exercise.difficulty %></td>

@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#For File UPload
+gem 'paperclip', '~> 6.0'
+gem 'paperclip-av-transcoder'
+gem 'aws-sdk-s3', '~> 1.9'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
