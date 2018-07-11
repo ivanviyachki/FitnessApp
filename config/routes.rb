@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :training_days
   resources :body_weights
   resources :foods
   resources :food_categories

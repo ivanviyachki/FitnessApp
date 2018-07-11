@@ -1,0 +1,27 @@
+<%= form_with(model: training_day, local: true) do |form| %>
+  <% if training_day.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(training_day.errors.count, "error") %> prohibited this training_day from being saved:</h2>
+
+      <ul>
+      <% training_day.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :exercise_id %>
+    <%= form.text_field :exercise_id, id: :training_day_exercise_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :food_id %>
+    <%= form.text_field :food_id, id: :training_day_food_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

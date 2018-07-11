@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @items.exercises.each do |e| %>
+    <%= e.name %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @items.foods.each do |f| %>
+    <%= f.name%>
+</p>
+
+<%= link_to 'Edit', edit_training_day_path(@training_day) %> |
+<%= link_to 'Back', training_days_path %>
