@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Body Weights For Month</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% i = 0%>
+    <% @body_weights.limit(30).each do |body_weight| %>
+      <tr>
+      <% if i == 0 %>
+        <span>Average weight for last 5 days:</span> 
+        <%= body_weight.average_weight %>
+        <% i = 1 %>
+      <% end %>  
+        <td><%= body_weight.weight %></td>
+        <td><%= body_weight.date %></td>
+        <td><%= link_to 'Show', body_weight %></td>
+        <td><%= link_to 'Edit', edit_body_weight_path(body_weight) %></td>
+        <td><%= link_to 'Destroy', body_weight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'New Body Weight', new_body_weight_path %>

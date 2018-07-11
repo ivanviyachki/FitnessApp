@@ -42,8 +42,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :food_category_id %>
-    <%= form.number_field :food_category_id, id: :food_food_category_id %>
+      <%= collection_select(:food,:food_category_id,FoodCategory.all,:id,:name) %>
   </div>
 
   <div class="actions">

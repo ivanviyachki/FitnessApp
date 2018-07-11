@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180706113607) do
+ActiveRecord::Schema.define(version: 20180709082842) do
+
+  create_table "body_weights", force: :cascade do |t|
+    t.float "weight"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "exercise_categories", force: :cascade do |t|
     t.string "name"

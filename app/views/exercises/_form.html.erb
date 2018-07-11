@@ -27,8 +27,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :exercise_category_id %>
-    <%= form.number_field :exercise_category_id, id: :exercise_exercise_category_id %>
+      <%= collection_select(:exercise,:exercise_category_id,ExerciseCategory.all,:id,:name) %>
   </div>
 
   <div class="field">
