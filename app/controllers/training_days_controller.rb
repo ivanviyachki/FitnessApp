@@ -10,7 +10,14 @@ class TrainingDaysController < ApplicationController
   # GET /training_days/1
   # GET /training_days/1.json
   def show
-    @items = TrainingDay.includes(:exercises, :foods).find(params[:id])
+    @exercise_name = ""
+    if @training_day.exercise_id != nil
+      @exercise_name = Exercise.find(@training_day.exercise_id).name 
+    end 
+    @food_name = ""
+    if @training_day.food_id != nil
+      @food_name = Food.find(@training_day.food_id).name 
+    end 
   end
 
   # GET /training_days/new

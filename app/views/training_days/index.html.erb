@@ -14,8 +14,16 @@
   <tbody>
     <% @training_days.each do |training_day| %>
       <tr>
-        <td><%= training_day.exercise %></td>
-        <td><%= training_day.food %></td>
+        <td>
+          <% if Exercise.where(:id => training_day.exercise_id).exists?%>
+            <%= Exercise.find(training_day.exercise_id).name %>
+          <% end %>
+        </td>
+        <td>
+          <% if Food.where(:id => training_day.food_id).exists?%>
+            <%= Food.find(training_day.food_id).name %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', training_day %></td>
         <td><%= link_to 'Edit', edit_training_day_path(training_day) %></td>
         <td><%= link_to 'Destroy', training_day, method: :delete, data: { confirm: 'Are you sure?' } %></td>

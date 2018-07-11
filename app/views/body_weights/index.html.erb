@@ -32,6 +32,38 @@
 
 </table>
 
+
 <br>
 
 <%= link_to 'New Body Weight', new_body_weight_path %>
+
+<br>
+<table>
+  <thead>
+    <tr>
+      <th> <strong>Exercises:</strong>  </th>
+      <th> <strong>Food:</strong>  </th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% i = 0%>
+    
+    <% TrainingDay.all.each do |training_day| %>
+    <tr>
+        <td>
+          <% if Exercise.where(:id => training_day.exercise_id).exists? %>
+            <%= Exercise.find(training_day.exercise_id).name %>
+          <% end %>
+        </td>
+        <td>
+          <% if Food.where(:id => training_day.food_id).exists? %>
+            <%= Food.find(training_day.food_id).name %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', training_day %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

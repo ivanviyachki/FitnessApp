@@ -6,7 +6,7 @@
 <div class="album py-3 bg-light">
 	<div class="container">
   		<div class="row">
-				<% Food.where(exercise_category_id: @food_categories.id).each do |listing| %>
+		  <% Food.where(food_category_id: @category.id).each do |listing| %>
 					<div class="col-xl-3 col-lg-4 col-sm-6 col-12 ">
 						<div class="card h-100">
 						  <span data-toggle="modal" data-target="#exampleModal<%= listing.id%>">
