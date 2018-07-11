@@ -1,4 +1,4 @@
-<%= form_with(model: exercise_category, local: true) do |form| %>
+<%= form_with(model: exercise_category, local: true, html: { multipart: true }) do |form| %>
   <% if exercise_category.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exercise_category.errors.count, "error") %> prohibited this exercise_category from being saved:</h2>
@@ -14,6 +14,11 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :exercise_category_name %>
+  </div>
+
+  <div class="field">
+  <%= form.label :photo %>
+  <%= form.file_field :photo %> 
   </div>
 
   <div class="actions">

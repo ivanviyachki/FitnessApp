@@ -35,6 +35,11 @@ gem 'paperclip', '~> 6.0'
 gem 'paperclip-av-transcoder'
 gem 'aws-sdk-s3', '~> 1.9'
 
+#For Bootstrap 
+gem 'bootstrap', '~> 4.1.1'
+gem 'rails_bootstrap_navbar'
+gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
