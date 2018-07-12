@@ -1,15 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<img src="https://image.ibb.co/mAFdNT/export_1.jpg" height="55%" width="55%" style="margin-left:20%">
+
 <h1>Body Weights For Month</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Weight</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<table align="right">
 
   <tbody>
   <% i = 0%>
@@ -20,11 +15,6 @@
         <%= body_weight.average_weight %>
         <% i = 1 %>
       <% end %>  
-        <td><%= body_weight.weight %></td>
-        <td><%= body_weight.date %></td>
-        <td><%= link_to 'Show', body_weight %></td>
-        <td><%= link_to 'Edit', edit_body_weight_path(body_weight) %></td>
-        <td><%= link_to 'Destroy', body_weight, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     
@@ -35,10 +25,13 @@
 
 <br>
 
-<%= link_to 'New Body Weight', new_body_weight_path %>
+<%= link_to 'Add body weight', new_body_weight_path, class: "btn btn-success btn-md my-4"%><br>
+
+
+<h1>Foods and Exercises For Day</h1>
 
 <br>
-<table>
+<table >
   <thead>
     <tr>
       <th> <strong>Exercises:</strong>  </th>
@@ -67,3 +60,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= link_to 'Add Training Day', new_training_day_path, class: "btn btn-success btn-md my-4"%><br>

@@ -1,6 +1,6 @@
 class Exercise < ApplicationRecord
     belongs_to :exercise_category
-    belongs_to :training_day
+    has_one :training_day
 
     validates :name, :difficulty, :exercise_category_id, presence: true
 

@@ -1,9 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @exercise_category.name %>
-</p>
+<h3> Listings under this category </h3>
+
+<% @exercise_category.exercises.each do |exercise| %>
+  <%= exercise.name%>
+  <%= exercise.difficulty%>
+  <%= exercise.name%>
+<% end %>
 
 <%= link_to 'Edit', edit_exercise_category_path(@exercise_category) %> |
 <%= link_to 'Back', exercise_categories_path %>

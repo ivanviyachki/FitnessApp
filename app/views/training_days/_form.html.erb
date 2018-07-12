@@ -10,16 +10,13 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :exercise_id %>
-    <%= form.text_field :exercise_id, id: :training_day_exercise_id %>
+      <%= collection_select(:training_day,:food_id,Food.all,:id,:name) %>
   </div>
 
   <div class="field">
-    <%= form.label :food_id %>
-    <%= form.text_field :food_id, id: :training_day_food_id %>
-  </div>
+  <%= collection_select(:training_day,:exercise_id,Exercise.all,:id,:name) %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
